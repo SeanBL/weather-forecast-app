@@ -1,0 +1,57 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+.header {
+margin: auto;
+color: white;
+background-color: rgb(38, 0, 255);
+text-align: center;
+padding: 5px;
+}
+
+.aside h2 {
+    font-size: 28px;
+    font-weight: bolder;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    width: 300px;
+    margin-bottom: 10px;
+}
+
+.input {
+    width: 330px;
+    border-radius: 3px;
+    font-size: 20px;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+.searchBtn {
+    width: 355px;
+    border-radius: 3px;
+    padding: 6px;
+    background-color: rgb(0, 183, 255);
+    color: white;
+    margin-bottom: 15px;
+}
+
+.container ul {
+    border-top: 1px solid rgb(128, 128, 128);
+    width: 355px;
+}
+
+.container ul li button {
+    margin-top: 10px;
+    background-color: rgb(175, 175, 175);
+    color: black;
+    text-align: center;
+    padding: 5px;
+    border-radius: 5px;
+    width: 355px;
+}
+
+.footer {
+    margin: 50vh;
+    margin-left: 10px;
+}
+
