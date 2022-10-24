@@ -25,10 +25,13 @@ function storeCityName() {
     localStorage.setItem("stored-name", JSON.stringify(searchHistory));
 }
 
+
 function renderCityName() {
+    
+    clearRenderedList();
     for (var i = 0; i < searchHistory.length; i++) {
         var searchHistName = searchHistory[i];
-        console.log(searchHistName);
+            
         var listEl = document.createElement("li");
         var buttonEl = document.createElement("button"); 
         buttonEl.setAttribute("data-index", i);
@@ -36,8 +39,11 @@ function renderCityName() {
         ul.appendChild(listEl);
         listEl.appendChild(buttonEl);
         
+        }
+        
+
     }
-}
+
 
 function init() {
     var retrieveCityName =JSON.parse(localStorage.getItem("stored-name"));
@@ -49,7 +55,12 @@ function init() {
 
 init();
 
+function clearRenderedList() {
+    ul.innerHTML = "";
+}
+
 //temporary
 clearBtn.addEventListener("click", function handleClick() {
     localStorage.clear();
+    clearRenderedList();
 })
