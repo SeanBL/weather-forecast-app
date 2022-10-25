@@ -2,15 +2,15 @@ var cityInput = document.getElementById("input");
 var searchBtn = document.getElementById("searchBtn");
 var clearBtn = document.getElementById("clearBtn");  //temporary
 var ul = document.getElementById("cityList");
-
+var APIKey = "82daf106d4faabdcbc91ddf602ace3b6";
 
 var searchHistory = [];
 
 searchBtn.addEventListener("click", function handleClick() {
-    console.log("it works");
-
+    
     var cityName = document.getElementById("input").value;
-
+    var queryURL = "http://api.openweathermap.org/data/2.5/weather?q=" + cityName + "&appid=" + APIKey;
+    
     if (cityName === "") {
         return;
     }
@@ -19,6 +19,19 @@ searchBtn.addEventListener("click", function handleClick() {
 
     storeCityName();
     renderCityName();
+
+    console.log(cityName);
+    console.log(APIKey);
+    fetch(queryURL)
+    .then(function(response) {
+        return response.json();
+    })
+    .then(function (data) {
+        console.log(data);
+        console.log(data.main.temp)
+        
+    })
+    
 });
 
 function storeCityName() {
