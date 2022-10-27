@@ -2,6 +2,7 @@ var cityInput = document.getElementById("input");
 var searchBtn = document.getElementById("searchBtn");
 var clearBtn = document.getElementById("clearBtn");  //temporary
 var ul = document.getElementById("cityList");
+var mainCityH2 = document.getElementById("cityh2");
 var APIKey = "82daf106d4faabdcbc91ddf602ace3b6";
 
 var searchHistory = [];
@@ -9,7 +10,7 @@ var searchHistory = [];
 searchBtn.addEventListener("click", function handleClick() {
     
     var cityName = document.getElementById("input").value;
-    var queryURL = "http://api.openweathermap.org/data/2.5/weather?q=" + cityName + "&appid=" + APIKey;
+    var queryURL = "http://api.openweathermap.org/data/2.5/forecast?q=" + cityName + "&units=imperial" + "&appid=" + APIKey;
     
     if (cityName === "") {
         return;
@@ -28,7 +29,18 @@ searchBtn.addEventListener("click", function handleClick() {
     })
     .then(function (data) {
         console.log(data);
-        console.log(data.main.temp)
+        console.log(data.city.name);
+        
+        console.log(data.list[0].dt);
+        console.log(data.list[0].weather[0].icon);
+        console.log(data.list[0].main.temp);
+        console.log(data.list[0].wind.speed);
+        console.log(data.list[0].main.humidity);
+
+        var dateFormat = new Date(data.list[0].dt).toLocaleDateString();
+        console.log(dateFormat);
+        var test = JSON.parse(data.list[0].weather[0].icon);
+        mainCityH2.append(data.city.name + test);
         
     })
     
