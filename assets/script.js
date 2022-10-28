@@ -37,10 +37,15 @@ searchBtn.addEventListener("click", function handleClick() {
         console.log(data.list[0].wind.speed);
         console.log(data.list[0].main.humidity);
 
-        var dateFormat = new Date(data.list[0].dt).toLocaleDateString();
+        var iconCode = data.list[0].weather[0].icon;
+       
+        var iconUrl = "http://openweathermap.org/img/w/" + iconCode + ".png";
+    
+
+        var dateFormat = moment.unix(data.list[0].dt).format("MM/D/YYYY");
         console.log(dateFormat);
-        var test = JSON.parse(data.list[0].weather[0].icon);
-        mainCityH2.append(data.city.name + test);
+        
+        mainCityH2.append(data.city.name + " (" + dateFormat + ") " + iconUrl);
         
     })
     
