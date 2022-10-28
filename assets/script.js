@@ -3,6 +3,7 @@ var searchBtn = document.getElementById("searchBtn");
 var clearBtn = document.getElementById("clearBtn");  //temporary
 var ul = document.getElementById("cityList");
 var mainCityH2 = document.getElementById("cityh2");
+var mainIcon = document.getElementById("main-icon");
 var APIKey = "82daf106d4faabdcbc91ddf602ace3b6";
 
 var searchHistory = [];
@@ -40,12 +41,15 @@ searchBtn.addEventListener("click", function handleClick() {
         var iconCode = data.list[0].weather[0].icon;
        
         var iconUrl = "http://openweathermap.org/img/w/" + iconCode + ".png";
+
+        mainIcon.setAttribute('src', iconUrl);
     
 
         var dateFormat = moment.unix(data.list[0].dt).format("MM/D/YYYY");
         console.log(dateFormat);
         
-        mainCityH2.append(data.city.name + " (" + dateFormat + ") " + iconUrl);
+        mainCityH2.append(data.city.name + " (" + dateFormat + ") ");
+        mainIcon.append(iconUrl);
         
     })
     

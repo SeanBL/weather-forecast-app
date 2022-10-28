@@ -63,8 +63,16 @@ padding: 5px;
     height: 23vh;
 }
 
+.city-and-icon {
+    width: fit-content;
+}
+
 .main-city h2 {
-    font-size: 26px;
+    font-size: 36px;
+    display: inline-block;
+}
+.main-icon {
+    float: right;
 }
 
 .main-city ul {
