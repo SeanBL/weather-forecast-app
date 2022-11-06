@@ -79,7 +79,7 @@ function getWeather(cityName) {
     wind.innerHTML = "";
     humidity.innerHTML = "";
    
-    var queryURL = "http://api.openweathermap.org/data/2.5/forecast?q=" + cityName + "&units=imperial" + "&appid=" + APIKey;
+    var queryURL = "https://api.openweathermap.org/data/2.5/forecast?q=" + cityName + "&units=imperial" + "&appid=" + APIKey;
 
     storeCityName();
     renderCityName();
