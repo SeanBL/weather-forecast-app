@@ -63,7 +63,7 @@ padding: 5px;
 
 .main-city {
     border: 1px solid black;
-    width: 60vw;
+    width: 65vw;
     margin-top: 15px;
     margin-left: 10px;
     height: 23vh;
@@ -87,17 +87,20 @@ padding: 5px;
 }
 
 #forecast-box {
-    width: 100px;
+    width: 30%;
     height: 200px;
-    background-color: grey;
-}
-
-.forecast-container{
-    margin-right: 10px;
+    background-color: rgb(36, 41, 80);
+    color: white;
 }
 
 .forecast-container div ul {
     list-style: none;
+    margin-left: 5px;
+}
+
+.forecast-container h3 {
+    margin-left: 10px;
+    margin-top: 10px;
 }
 
 .footer {
